@@ -31,6 +31,7 @@ public class Selenium001 {
 
         ChromeDriver driver = new ChromeDriver();
         driver.get("https://app.vwo.com");
+        driver.close();
 
 
     }
