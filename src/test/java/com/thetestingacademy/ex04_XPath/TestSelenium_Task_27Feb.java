@@ -8,6 +8,9 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import java.text.NumberFormat;
+import java.util.Locale;
+
 public class TestSelenium_Task_27Feb {
 
     @Owner("Vani")
@@ -59,8 +62,12 @@ public class TestSelenium_Task_27Feb {
         Thread.sleep(2000);
 
         Allure.step("Transfer the amount 5000");
+        //String amt = "5000";
+        Integer initial_tot_Bal = 50000;
+        Integer amt1 = 5000;
         WebElement amount = driver.findElement(By.xpath("//input[@type=\"number\"]"));
-        amount.sendKeys("5000");
+        //amount.sendKeys(amt);
+        amount.sendKeys(amt1.toString());
 
         WebElement btn_continue = driver.findElement(By.xpath("//button[contains(text(),\"Continue\")]"));
         btn_continue.click();
@@ -91,10 +98,16 @@ public class TestSelenium_Task_27Feb {
         Assert.assertEquals(h1.getText(),"Dashboard");
 
         Allure.step("Verify total balance");
+        Integer bal_amt;
+        bal_amt = initial_tot_Bal - amt1;
+        //String balance;
+        //balance = bal_amt.toString();
+        NumberFormat formatter = NumberFormat.getCurrencyInstance(Locale.US);
+        String formattedAmount = formatter.format(bal_amt);
         WebElement total_bal = driver.findElement(By.xpath("//h3[@class=\"mt-2 text-3xl font-bold\"]"));
-        Assert.assertEquals(total_bal.getText(),"$45,000.00");
+        Assert.assertEquals(total_bal.getText(),formattedAmount);
 
-        if(total_bal.getText().equals("$45,000.00")){
+        if(total_bal.getText().equals(formattedAmount)){
             System.out.println("Funds Transfer Success");
         }
         else{
