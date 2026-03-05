@@ -18,6 +18,10 @@ public class TestSelenium20_MiniProject {
         WebDriver driver = new ChromeDriver();
         driver.get("https://awesomeqa.com/hr/web/index.php/auth/login");
 
+        //thread.sleep is not for webdrive
+        //we are giving command to java compiler to wait
+        //which is actually wrong
+
         Thread.sleep(2000);
         //Xpath is found by using //tagname[@attribute="value"]
         //on the inspect element page - do a ctrl+F and we can type the xpath there and find no. of matches
