@@ -1,13 +1,9 @@
-import org.openqa.selenium.By;
-import org.openqa.selenium.SearchContext;
+package com.thetestingacademy;
+
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.remote.RemoteWebDriver;
-
-import java.util.List;
 
 public class TestSelenium4_WebDriver_Hierarchy {
     public static void main(String[] args) {

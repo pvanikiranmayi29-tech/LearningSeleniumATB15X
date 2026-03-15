@@ -50,9 +50,7 @@ public class TestSelenium_Task25Feb {
         }
 
         Allure.step("Navigate to Make Appointment Screen");
-        List<WebElement> elements = driver.findElements(
-                By.xpath("//h2[text()='Make Appointment']")
-        );
+        List<WebElement> elements = driver.findElements(By.xpath("//h2[text()='Make Appointment']"));
 
         if (elements.size() > 0) {
             System.out.println("Make Appointment is present");
