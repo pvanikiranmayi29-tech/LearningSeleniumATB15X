@@ -71,4 +71,10 @@ public class CommonToAll {
             System.out.println("Close button not found");
         }
     }
+
+    public void waitForClickable(WebDriver driver,String given_css){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebElement Button = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(given_css)));
+        Button.click();
+    }
 }
