@@ -67,7 +67,7 @@ public class TestSelenium_Task11Mar_Singup extends CommonToAll {
 
                 signup_email.clear();
                 waitforJVM(2000);
-                signup_email.sendKeys("vanishravanani@gymzz.com");
+                signup_email.sendKeys("vanishravani@gymzz.com");
 
                 WebElement i_agree = driver.findElement(By.xpath("//input[@data-qa=\"page-free-trial-step1-gdpr-consent-checkbox\"]"));
                 i_agree.click();
